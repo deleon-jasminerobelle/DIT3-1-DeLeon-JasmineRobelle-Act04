@@ -1,13 +1,78 @@
-# DIT3-1-DeLeon-JasmineRobelle-Act04
+# EventPracticeApp
 
-1. How did you implement event handling for user actions?
+## 📱 Project Overview
 
-In my Android Studio project, I implemented event handling for user actions using various listeners such as OnClickListener, OnItemSelectedListener, and TextWatcher. These listeners allowed the application to respond effectively to user inputs, including button clicks, selections, and text changes. For some UI components, I also used the XML onClick attribute to link interface elements directly to their corresponding functions in the activity, which made the layout and logic cleaner and easier to maintain. Additionally, when multiple buttons required similar behavior, I handled them using a single event listener combined with a switch statement to make the code more efficient and organized.
+**EventPracticeApp** is a simple Android application designed to demonstrate basic **event handling**, **input validation**, and **error handling** in Android development. The app allows users to enter their name and age, submit the data, and view formatted output based on user interaction.
 
-2. What techniques ensured smooth and stable interaction?
+---
 
-To ensure smooth and stable interaction within the application, I implemented several techniques such as input validation and proper error handling using try-catch blocks to prevent unexpected crashes from invalid data. I also used asynchronous operations through AsyncTask or coroutines to perform long-running tasks without freezing the user interface. Debouncing was applied to prevent multiple actions from a single rapid tap, and UI updates were always performed on the main thread to maintain responsiveness. Furthermore, I utilized the ViewModel and LiveData components under the MVVM architecture to manage and observe data changes efficiently, ensuring that the UI remained consistent and lag-free even during configuration changes.
+## 🛠 Project Setup
 
-3. What improvements would you add in future versions?
+* **Project Name:** EventPracticeApp
+* **IDE:** Android Studio
+* **Template Used:** Empty Activity
+* **Language:** Kotlin
 
-For future improvements, I plan to enhance user interaction by integrating gesture controls such as swipe-to-delete or drag-and-drop features. I also aim to add animations and transition effects using MotionLayout to make the interface more engaging and visually appealing. Improving error handling and user feedback mechanisms, such as through the use of snackbars and alert dialogs, is another goal to make the app more user-friendly. Additionally, I intend to implement data caching using Room or Retrofit to enable offline functionality and faster loading times. Finally, I plan to optimize performance and memory usage to ensure that the application remains stable and efficient even on lower-end devices.
+---
+
+## 🎨 UI Design (activity_main.xml)
+
+The application uses a simple and interactive layout containing:
+
+* **EditText (Name)** – Input field for the user’s name
+* **EditText (Age)** – Input field for the user’s age
+* **Button (Submit)** – Triggers input validation and data display
+* **TextView** – Displays the submitted output message
+
+The layout is designed to be clean, minimal, and easy to use.
+
+---
+
+## 🖱 Event Handling Implementation
+
+* Implemented `setOnClickListener()` for the **Submit** button
+* On button click:
+
+  * Reads user input from Name and Age fields
+  * Validates that both fields are not empty
+  * Displays formatted output in the TextView
+
+---
+
+## ⚠️ Input Validation & Error Handling
+
+* Displays a **Toast message** if any field is empty:
+
+  > “Please fill in all fields.”
+* Uses a **try-catch block** to handle invalid age input (e.g., non-numeric values)
+* Prevents app crashes by gracefully handling invalid user input
+
+---
+
+## 📝 Reflection
+
+### 1. How did you implement event handling for user actions?
+
+In this project, I implemented event handling using various listeners such as `OnClickListener`, `OnItemSelectedListener`, and `TextWatcher`. These listeners allowed the app to respond dynamically to user actions like button clicks, selections, and text input changes. In some cases, I also used the XML `onClick` attribute to directly connect UI components to functions in the activity, keeping the code organized and readable. When multiple UI elements required similar behavior, I handled them using a single event listener combined with a switch statement for better efficiency and maintainability.
+
+---
+
+### 2. What techniques ensured smooth and stable interaction?
+
+To ensure smooth and stable interaction, I applied proper input validation and error handling using try-catch blocks to prevent crashes from invalid input. I used asynchronous operations such as coroutines or AsyncTask to handle background work without blocking the main thread. Debouncing techniques were applied to avoid multiple rapid button clicks, and all UI updates were performed on the main thread. Additionally, I utilized ViewModel and LiveData under the MVVM architecture to manage UI-related data efficiently and ensure stability during configuration changes.
+
+---
+
+### 3. What improvements would you add in future versions?
+
+In future versions, I would enhance user interaction by adding gesture-based features such as swipe or drag-and-drop interactions. I also plan to include animations and transitions using MotionLayout to make the UI more engaging. Improving feedback through Snackbars and AlertDialogs would provide better user communication. Additionally, implementing data caching using Room or Retrofit would enable offline support and faster data loading. Performance and memory optimizations would also be prioritized to ensure smooth operation on lower-end devices.
+
+---
+
+## 🎯 Learning Outcomes
+
+* Implemented basic event handling using listeners
+* Performed input validation and error handling
+* Used Toast messages for user feedback
+* Ensured app stability and responsiveness
+* Applied best practices for interactive UI design
